@@ -4,10 +4,13 @@ from sklearn.datasets.samples_generator import make_blobs
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+#hierarchical -- the algorithm defines how many clusters the dataset has
+
 centers = [[1,1,1],[5,5,5],[3,10,10]]
 
 X, _ = make_blobs(n_samples = 500, centers = centers, cluster_std = 1.5)
-
+#plt.scatter(X[:,0],X[:,1])
+#plt.show()
 
 ms = MeanShift()
 ms.fit(X)
